@@ -17,3 +17,16 @@ Check it out here:
 <br/>
 
 ![img](./screenshots/screenshot2.png)
+
+<br />
+<br />
+
+# To run on localhost
+
+`git clone git@github.com:roguesherlock/react-todo.git`
+
+`cd react-todo`
+
+`yarn install`
+
+`yarn start`

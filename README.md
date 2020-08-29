@@ -2,4 +2,9 @@
 
 A Stupid simple Todo App on React/TypeScript/Tailwind Stack
 
-![img](./screenshots/screenshot.png)
+![img](./screenshots/screenshot1.png)
+
+<br/>
+<br/>
+
+![img](./screenshots/screenshot2.png)

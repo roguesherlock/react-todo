@@ -1,5 +1,6 @@
 import { useReducer, useRef, useCallback } from "react";
 import { generateId } from "../helpers";
+import useEventListener from "./useEventListener";
 
 export type ItemType = { id: string; text: string; checked: boolean };
 
@@ -71,6 +72,8 @@ export default function useTodo() {
   const [state, dispatch] = useReducer(todoReducer, null, (_) => ({
     items: loadTodos(),
   }));
+
+  useEventListener("beforeunload", () => saveTodos(state.items));
 
   const toggleCheck = (item: ItemType) => {
     dispatch({ type: "toggleCheck", value: item.id });

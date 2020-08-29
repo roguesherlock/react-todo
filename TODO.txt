@@ -1,4 +1,3 @@
-- save before browser tab is closed/reloaded
 - add pomodor timer
 - figure out dispatch called multiple times on (dev && strict) mode
 - customize scroll bar

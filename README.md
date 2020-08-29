@@ -1,5 +1,5 @@
-I found myself doing this repeatedly so decided to create a base template which I can just mirror.
+# TODO App
 
-- React
-- Typescript
-- TailwindCSS
+A Stupid simple Todo App on React/TypeScript/Tailwind Stack
+
+![img](./screenshots/screenshot.png)

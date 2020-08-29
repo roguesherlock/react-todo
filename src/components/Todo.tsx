@@ -3,6 +3,7 @@ import React from "react";
 
 import useUnsplash from "../hooks/useUnsplash";
 import useTodo, { ItemType } from "../hooks/useTodo";
+import Clock from "./Clock";
 
 export default function Todo(props: any) {
   const [imgUrl] = useUnsplash();
@@ -10,14 +11,17 @@ export default function Todo(props: any) {
   const { items, bindInput, toggleCheck } = useTodo();
   return (
     <div
-      className="flex text-white font-bold flex-col items-center justify-center h-screen bg-opacity-25"
-      style={{ backgroundImage: `url(${imgUrl})`, opacity: 0.75 }}
+      className="flex text-white font-bold flex-col items-center justify-center h-screen"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imgUrl})`,
+      }}
     >
-      <h1 className="text-5xl text-center font-semibold tracking-wide uppercase">
+      <Clock />
+      <h1 className="text-5xl mt-2 text-center font-semibold tracking-wide uppercase">
         Let's get shit done
       </h1>
       <input
-        className="border border-gray-300 bg-transparent shadow rounded-md p-4 max-w-sm w-full mx-auto text-xl focus:outline-none focus:border-gray-500"
+        className="mt-2 border border-gray-300 bg-transparent shadow rounded-md p-4 max-w-sm w-full mx-auto text-xl focus:outline-none focus:border-gray-500"
         {...bindInput}
       />
       <div

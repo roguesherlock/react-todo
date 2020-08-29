@@ -1,5 +1,5 @@
-- add ability to delete items
 - save before browser tab is closed/reloaded
-- update opacity so that font sticks out more
 - add pomodor timer
 - figure out dispatch called multiple times on (dev && strict) mode
+- customize scroll bar
+- maybe add quote

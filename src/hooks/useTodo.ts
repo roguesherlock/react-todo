@@ -52,6 +52,13 @@ const todoReducer = (
       saveTodos(items);
       return { ...state, items };
     }
+
+    case "deleteItem": {
+      const itemId = action.value! as string;
+      const items = state.items.filter((item) => item.id !== itemId);
+      saveTodos(items);
+      return { ...state, items };
+    }
     default: {
       return state;
     }
@@ -68,9 +75,14 @@ export default function useTodo() {
   const toggleCheck = (item: ItemType) => {
     dispatch({ type: "toggleCheck", value: item.id });
   };
+
+  const deleteItem = (item: ItemType) => {
+    dispatch({ type: "deleteItem", value: item.id });
+  };
   return {
     items: state.items,
     toggleCheck,
+    deleteItem,
     bindInput: {
       ref: inputRef,
       onKeyPress: useCallback(

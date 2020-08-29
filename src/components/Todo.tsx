@@ -8,15 +8,15 @@ import Clock from "./Clock";
 export default function Todo(props: any) {
   const [imgUrl] = useUnsplash();
 
-  const { items, bindInput, toggleCheck } = useTodo();
+  const { items, bindInput, toggleCheck, deleteItem } = useTodo();
   return (
     <div
-      className="flex text-white font-bold flex-col items-center justify-between h-screen"
+      className="flex text-white font-bold flex-col items-center justify-around h-screen"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imgUrl})`,
       }}
     >
-      <div className={"mt-2"}>
+      <div className={""}>
         <Clock />
       </div>
       <div className={"flex flex-col items-center justify-center"}>
@@ -37,7 +37,7 @@ export default function Todo(props: any) {
               <div
                 key={item.id}
                 className={
-                  "flex z-10 max-w-sm items-center text-2xl border border-gray-300 cursor-pointer shadox-xl p-4 mx-auto mt-2 rounded-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+                  "flex z-10 max-w-sm items-center justify-between text-2xl border border-gray-300 cursor-pointer shadox-xl p-4 mx-auto mt-2 rounded-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
                 }
                 onClick={(e) => toggleCheck(item)}
               >
@@ -62,6 +62,25 @@ export default function Todo(props: any) {
                   style={{ wordBreak: "break-word" }}
                 >
                   {item.text}
+                </div>
+                <div
+                  className={
+                    "ml-2 hover:rounded-full hover:bg-gray-300 hover:bg-opacity-25 hover:text-gray-900 "
+                  }
+                  onClick={(e) => deleteItem(item)}
+                >
+                  <svg
+                    className="h-6 w-6 "
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
                 </div>
               </div>
             );
